@@ -1,8 +1,11 @@
-<html>
-    <body>
-        <h1>Oh, hello there Miss Cats, how are you?</h1>
-        <b>Time to do some Pokemon work!</b>
-        <div>New line to test</div>
+<html ng-app="ld.pokemon">
+    <body ng-controller="PokemonController as pokeCtrl">
+        <h1>{{pokeCtrl.header}}</h1>
+        <b>Enter the Pokemon you want to search for</b>
+        
+        <pokemon-form-component />
+
     </body>
+    <script src="./dist/angular.min.js"></script>
     <script src="./dist/app.js"></script>
 </html>

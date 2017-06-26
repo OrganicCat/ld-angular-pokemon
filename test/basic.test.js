@@ -11,6 +11,10 @@ describe('Pokemon App', function() {
     $controller = _$controller_;
   }));
 
+  it('should have a form component', function() {
+    expect().toBe(true);
+  });
+
   describe('Finds the strongest pokemon', function() {
     it('should show the strongest pokemon', function() {
         var pokemon = "";

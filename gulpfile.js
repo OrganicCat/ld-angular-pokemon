@@ -1,4 +1,5 @@
 var gulp        = require('gulp');
+var babel       = require('gulp-babel');
 var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
 var concat      = require('gulp-concat');
@@ -15,8 +16,11 @@ gulp.task('serve', function() {
 });
 
 gulp.task('js', function() {
-  console.log("Running gulp-concat");
-  return gulp.src(['./lib/angular.min.js', './app/js/*.js'])
+  console.log("CUSTOM: Running gulp-concat");
+  return gulp.src('./app/js/*.js')
+    .pipe(babel({
+        presets: ['es2015']
+    }))
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./app/dist/'));
 });
